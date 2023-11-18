@@ -1,0 +1,10 @@
+.head{
+    display: flex;
+    justify-content: space-between;
+}
+.foodItemList{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: space-between;
+    gap: 45px;
+}
