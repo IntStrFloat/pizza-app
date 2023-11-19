@@ -1,12 +1,12 @@
 import { FC } from 'react';
 import styles from './Layout.module.css';
-import { MenuIcon } from '../svg/MenuIcon';
-import { CartIcon } from '../svg/CartIcon';
-import { OnOffSvg } from '../svg/OnOffSvg';
+import { MenuIcon } from '../../svg/MenuIcon';
+import { CartIcon } from '../../svg/CartIcon';
+import { OnOffSvg } from '../../svg/OnOffSvg';
 import { Outlet } from 'react-router-dom';
-import { Button } from '../components/Button/Button';
+import { Button } from '../../components/Button/Button';
 import { Profile } from './Profile';
-import logo from '../assets/Intersect.png';
+import logo from '../../assets/Intersect.png';
 import { LinkButton } from './LinkButton';
 
 export const Layout: FC = () => {

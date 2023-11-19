@@ -6,15 +6,23 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import { Menu } from './pages/Menu/Menu';
 import { Cart } from './pages/Cart/Cart';
 import { Error } from './pages/Error/Error';
-import { Layout } from './layouts/Layout.tsx';
+import { Layout } from './layouts/Menu/Layout.tsx';
 import { ProductPage } from './pages/Product/Product.tsx';
 import axios from 'axios';
 import { DOMEN } from './helpers/API.ts';
+import { AuthLoyuot } from './layouts/Auth/AuthLoyuot.tsx';
+import { Login } from './pages/Login/Login.tsx';
+import { Register } from './pages/Register/Register.tsx';
+import { RequireAuth } from './helpers/RequireAuth.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Layout />,
+    element: (
+      <RequireAuth>
+        <Layout />
+      </RequireAuth>
+    ),
     children: [
       {
         path: '/',
@@ -37,15 +45,15 @@ const router = createBrowserRouter([
   },
   {
     path: '/auth',
-    element: <>Авторизация</>,
+    element: <AuthLoyuot />,
     children: [
       {
-        path: '/login',
-        element: <></>,
+        path: 'login',
+        element: <Login />,
       },
       {
-        path: '/register',
-        element: <></>,
+        path: 'register',
+        element: <Register />,
       },
     ],
   },
